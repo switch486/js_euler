@@ -1,19 +1,26 @@
 "use strict";
 
-function mod(number) {
-	return function next(value) {
-		return value % number;
+function mod(result) {
+	return function next(divider) {
+		return function again(value) {
+			return value % divider == result;
+		}
 	}
 }
 
-var mod3 = mod (3);
-var mod5 = mod (5);
+function or (fun1, fun2) {
+	return function logicalOr (args) {
+		return fun1(args) || fun2(args);
+	}
+}
 
-console.log(mod3(8));
+var mod0_3 = mod (0) (3);
+var mod0_5 = mod (0) (5);
 
+console.log(mod0_3(8));
 
 function isRelevant(number) {
-	return mod3(number) == 0 || mod5(number) == 0;
+	return or(mod0_3, mod0_5)(number);
 }
 
 function countRelevantUpTo(number) {
