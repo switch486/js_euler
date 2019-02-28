@@ -22,6 +22,8 @@ var isRelevant = or(mod0_3, mod0_5);
 console.log (isRelevant(9));
 console.log (isRelevant(11));
 
+// refactor below
+
 function countRelevantUpTo(number) {
 	var sum = 0;
 	for (var i = 0; i<number; i++) {
