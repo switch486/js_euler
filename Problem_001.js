@@ -17,12 +17,10 @@ function or (fun1, fun2) {
 var mod0_3 = mod (0) (3);
 var mod0_5 = mod (0) (5);
 
-console.log(mod0_3(8));
-
-//function isRelevant(number) {
-//	return or(mod0_3, mod0_5)(number);
-//}
 var isRelevant = or(mod0_3, mod0_5);
+
+console.log (isRelevant(9));
+console.log (isRelevant(11));
 
 function countRelevantUpTo(number) {
 	var sum = 0;
