@@ -19,9 +19,10 @@ var mod0_5 = mod (0) (5);
 
 console.log(mod0_3(8));
 
-function isRelevant(number) {
-	return or(mod0_3, mod0_5)(number);
-}
+//function isRelevant(number) {
+//	return or(mod0_3, mod0_5)(number);
+//}
+var isRelevant = or(mod0_3, mod0_5);
 
 function countRelevantUpTo(number) {
 	var sum = 0;
